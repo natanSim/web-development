@@ -1,9 +1,9 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', )
 def welcome():
     return ('Welcome to our website!,'
             'You can find here the best collections in the world')
@@ -14,13 +14,14 @@ def get_price():
     return 'This collection is discounted for 24 hours today - instead of 200$, you pay 150$  '
 
 
-@app.route('/news')
+@app.route('/news', methods=['POST'])
 def news():
     return ('You can read news about our collection here '
             '(When a new collections arrives, and more)')
 
 
 @app.route('/about')
+
 def about():
     return 'You can read here about of our company'
 
@@ -29,9 +30,11 @@ def about():
 def collection():
     return 'You can find our collections here '
 
-# news
-# about
-# collection
 
+@app.route('/get_user_by_email', methods=['GET'])
+def get_user_by_email():
+    print(request.args.get('email'))
+    return "Ok"
 
-app.run()
+if __name__ == '__main__':
+    app.run()
