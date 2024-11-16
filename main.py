@@ -31,9 +31,9 @@ def collection():
     return 'You can find our collections here '
 
 
-@app.route('/get_user_by_email', methods=['GET'])
-def get_user_by_email():
-    print(request.args.get('email'))
+@app.route('/get_user_by_information', methods=['GET'])
+def get_user_by_information():
+    print(request.args.get('information'))
     return "Ok"
 
 if __name__ == '__main__':
