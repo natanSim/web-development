@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 
-def information(user_email, user_name, user_last_name, user_age, id_of_user):
+def user_data(user_email, user_name, user_last_name, user_age, id_of_user):
     print(f'The email is : {email}\n'
           f'the name is: {user_name}\n'
           f'the last_name is: {user_last_name}\n'
@@ -20,4 +20,4 @@ if __name__ == '__main__':
     last_name = st.text_input(label="Last name", placeholder="Israeli")
     age = st.text_input(label="Age", placeholder="18")
     user_id = st.text_input(label="Id", placeholder="Numbers from 1 to 9", help='id: 123456789')
-    st.button("Submit", on_click=lambda: information(email, name, last_name, age, user_id))
+    st.button("Submit", on_click=lambda: user_data(email, name, last_name, age, user_id))

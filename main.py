@@ -33,8 +33,15 @@ def collection():
 
 @app.route('/get_user_by_information', methods=['GET'])
 def get_user_by_information():
-    print(request.args.get('information'))
+    print(request.args.get("'email', 'name', 'last_name' ,'age' , 'user_id'"))
     return "Ok"
+
+
+@app.route('/registration_form', methods=['GET'])
+def registration_form():
+    print(request.args.get("'email', 'name', 'last_name' ,'age' , 'user_id'"))
+    return "Ok"
+
 
 if __name__ == '__main__':
     app.run()
